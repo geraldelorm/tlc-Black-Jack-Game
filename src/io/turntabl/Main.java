@@ -10,12 +10,17 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-        System.out.print("Enter Number Of Players: ");
+//        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+//        System.out.print("Enter Number Of Players: ");
+//
+//        int numberOfPlayers = myObj.nextInt();  // Read user input
+        try {
+            int numberOfPlayers = Integer.parseInt(args[0]);
+            Game game = new Game(numberOfPlayers);
+            game.start();
+        } catch (Exception e) {
+            e.getMessage();
+        }
 
-        int numberOfPlayers = myObj.nextInt();  // Read user input
-
-        Game game = new Game(numberOfPlayers);
-        game.start();
     }
 }
