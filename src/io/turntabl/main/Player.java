@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-
-
     private final Integer ID;
     private List<Card> cards;
+    private Strategy currStrategy;
 
     public Player(Integer id) {
         ID = id;
         cards = new ArrayList<>();
+        currStrategy = Strategy.none;
     }
 
     public List<Card> getCards() {
@@ -24,6 +24,14 @@ public class Player {
 
     public void addCard(Card card) {
         cards.add(card);
+    }
+
+    public Strategy getCurrStrategy() {
+        return currStrategy;
+    }
+
+    public void setCurrStrategy(Strategy currStrategy) {
+        this.currStrategy = currStrategy;
     }
 
     public Integer getCardsValue() {
