@@ -5,26 +5,17 @@ import io.turntabl.main.Deck;
 import io.turntabl.main.Game;
 
 import java.util.Collections;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-//	// write your code here
-//        System.out.println("hey");
-//        Deck deck = new Deck();
-//        int random = (int) (Math.random() * (52 - 2) + 1);
-//
-//        System.out.println(deck); // not shuffled
-//        Collections.shuffle(deck.getCards());
-//        System.out.println(deck); // shuffled
-////        System.out.println(deck.getCards().get(random));
-//
-//        Card card = deck.getCards().get(random);
-//        System.out.println(card);
-//        System.out.println(card.getValue());
-//        System.out.println(card.getValue().getValue());
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        System.out.print("Enter Number Of Players: ");
 
-        Game game = new Game();
+        int numberOfPlayers = myObj.nextInt();  // Read user input
+
+        Game game = new Game(numberOfPlayers);
         game.start();
     }
 }
